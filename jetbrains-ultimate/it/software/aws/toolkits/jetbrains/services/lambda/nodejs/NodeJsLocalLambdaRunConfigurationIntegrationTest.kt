@@ -23,7 +23,7 @@ import software.aws.toolkits.jetbrains.settings.SamSettings
 import software.aws.toolkits.jetbrains.utils.WebStormTestUtils
 import software.aws.toolkits.jetbrains.utils.checkBreakPointHit
 import software.aws.toolkits.jetbrains.utils.executeRunConfiguration
-import software.aws.toolkits.jetbrains.utils.rules.NodeJsCodeInsightTestFixtureRule
+import software.aws.toolkits.jetbrains.utils.rules.HeavyNodeJsCodeInsightTestFixtureRule
 import software.aws.toolkits.jetbrains.utils.rules.addPackageJsonFile
 import java.util.concurrent.atomic.AtomicReference
 
@@ -40,7 +40,7 @@ class NodeJsLocalLambdaRunConfigurationIntegrationTest(private val runtime: Runt
 
     @Rule
     @JvmField
-    val projectRule = NodeJsCodeInsightTestFixtureRule()
+    val projectRule = HeavyNodeJsCodeInsightTestFixtureRule()
 
     private val mockId = "MockCredsId"
     private val mockCreds = AwsBasicCredentials.create("Access", "ItsASecret")

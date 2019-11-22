@@ -14,7 +14,7 @@ import software.aws.toolkits.jetbrains.services.lambda.Lambda
 import software.aws.toolkits.jetbrains.services.lambda.LambdaBuilder
 import software.aws.toolkits.jetbrains.services.lambda.java.BaseLambdaBuilderTest
 import software.aws.toolkits.jetbrains.services.lambda.sam.SamCommon
-import software.aws.toolkits.jetbrains.utils.rules.NodeJsCodeInsightTestFixtureRule
+import software.aws.toolkits.jetbrains.utils.rules.HeavyNodeJsCodeInsightTestFixtureRule
 import software.aws.toolkits.jetbrains.utils.rules.addLambdaHandler
 import software.aws.toolkits.jetbrains.utils.rules.addPackageJsonFile
 import software.aws.toolkits.jetbrains.utils.rules.addSamTemplate
@@ -23,7 +23,7 @@ import java.nio.file.Paths
 class NodeJsLambdaBuilderTest : BaseLambdaBuilderTest() {
     @Rule
     @JvmField
-    val projectRule = NodeJsCodeInsightTestFixtureRule()
+    val projectRule = HeavyNodeJsCodeInsightTestFixtureRule()
 
     override val lambdaBuilder: LambdaBuilder
         get() = NodeJsLambdaBuilder()
